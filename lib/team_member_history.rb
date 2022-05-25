@@ -5,8 +5,8 @@ require 'csv'
 #   id,event,timestamp 形式の csv を受け取り、
 #   そのレコードは id -> timestamp の順で sort されていること
 
-hisotry_filename = ARGV.shift
-history_csv_path = Pathname.new(__dir__).join('..', 'audit_log', hisotry_filename)
+history_filename = ARGV.shift
+history_csv_path = Pathname.new(__dir__).join('..', 'audit_log', history_filename)
 unless history_csv_path.exist?
   raise "error: file not found [#{history_csv_path.to_s}]"
 end
